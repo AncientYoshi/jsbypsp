@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Head Tail</title>
+  </head>
+  <body>
+    <script>
+      let rannum = Math.random();
+      let result = "";
+      if (rannum < 0.5) {
+        result = "head";
+      } else {
+        result = "tail";
+      }
+      let guess = "head";
+      if (guess === result) {
+        console.log("You Win!");
+      } else {
+        console.log("You lose!");
+      }
+    </script>
+  </body>
+</html>
