@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kilo mile change</title>
+  </head>
+  <body>
+    <script>
+      function convertLength(length, from, to) {
+        if (from === "km" && to === "mile") {
+          let r = (length * 1) / 1.6;
+          return r + " " + to;
+        } else if (from === "mile" && to === "km") {
+          let c = length * 1.6;
+          return c + " " + to;
+        } else if (from === to) {
+          return length + " " + to;
+        } else if (from === "mile" && to === "feet") {
+          let d = length * 5280;
+          return d + " " + to;
+        } else if (from === "km" && to === "feet") {
+          let v = length * 3281;
+          return v + " " + to;
+        } else {
+          if (from != ("km" || "feet" || "mile")) {
+            return `invalid units ${from}`;
+          } else if (to != ("km" || "feet" || "mile")) {
+            return `invalid units ${to}`;
+          }
+        }
+      }
+      console.log(convertLength(50, "mile", "km"));
+      console.log(convertLength(32, "km", "mile"));
+      console.log(convertLength(50, "km", "km"));
+      console.log(convertLength(5, "mile", "km"));
+      console.log(convertLength(5, "mile", "feet"));
+      console.log(convertLength(5, "km", "feet"));
+
+      console.log(convertLength(5, "lbs", "feet"));
+      console.log(convertLength(5, "lbs", "lbs"));
+    </script>
+  </body>
+</html>

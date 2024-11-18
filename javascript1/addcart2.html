@@ -12,7 +12,11 @@
     </button>
     <button
       onclick="
-        if (cartquantity >= 10){console.log('Cart is full')}else{
+        if (cartquantity >= 10){
+          alert('Cart is full');
+          return;
+
+        }else{
 
          
 
