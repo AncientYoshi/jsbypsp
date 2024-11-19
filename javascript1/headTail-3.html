@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Head Tail</title>
+  </head>
+  <body>
+    <button onclick="playGame('head')">Head</button>
+    <button onclick="playGame('tail')">Tail</button>
+    <script>
+      function playGame(guess) {
+        let rannum = Math.random();
+        let result = "";
+        rannum < 0.5 ? (result = "head") : (result = "tail");
+        guess === result ? console.log("You Win") : console.log("You lose");
+        guess === result ? obj.win++ : obj.loss++;
+        console.log(obj);
+        localStorage.setItem("obj", JSON.stringify(obj));
+      }
+      const obj = JSON.parse(localStorage.getItem("obj")) || {
+        win: 0,
+        loss: 0,
+      };
+    </script>
+  </body>
+</html>
