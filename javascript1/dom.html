@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <button>Hello</button>
+    <button class="Second">second</button>
+    <script>
+      console.log(document.querySelector("button"));
+      console.log(document.querySelector("button").innerHTML);
+      document.querySelector("button").innerHTML = "Hi";
+      document.querySelector(".Second");
+      console.log(document.querySelector(".Second"));
+      const but2 = document.querySelector(".Second");
+      console.log(but2);
+      /*console.log(document.body.innerHTML);
+      console.log(document.title);
+      document.title = "chageme";
+      document.body.innerHTML = "<button>Chageme</button>";*/
+    </script>
+  </body>
+</html>

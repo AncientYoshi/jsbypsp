@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" onkeyup="testonkey(event)" class="ty" />
+    <p class="btn-test"></p>
+    <script>
+      function testonkey(event) {
+        let x = document.querySelector(".ty").value;
+        //x = `${x}` + event.key;
+        document.querySelector(".btn-test").innerHTML = x;
+      }
+    </script>
+  </body>
+</html>

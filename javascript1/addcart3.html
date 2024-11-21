@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+    <button
+      onclick="console.log('Cart Quantity:' + cartquantity);
+    showCart();"
+    >
+      Show Quantity
+    </button>
+    <button
+      onclick="
+        if (cartquantity >= 10){
+          alert('Cart is full');
+          return;
+
+        }else{
+
+         
+
+      cartquantity ++;
+    console.log('Cart Quantity:' + cartquantity)}; 
+    showCart();"
+    >
+      Add to Cart
+    </button>
+    <button
+      onclick="
+            if (cartquantity >= 9){console.log('Cart cant add 2 items any more')} else {
+
+      cartquantity += 2;
+    console.log('Cart Quantity:' + cartquantity)};
+    showCart();"
+    >
+      +2
+    </button>
+    <button
+      onclick="
+            if (cartquantity >= 8){console.log('Cart cant add 3 items anymore')}else{ 
+            cartquantity += 3;
+    console.log('Cart Quantity:' + cartquantity)};
+    showCart();"
+    >
+      +3
+    </button>
+    <button
+      onclick="
+                  if (cartquantity >= 7){console.log('Cart cant add 4 items anymore')}else{ 
+
+      cartquantity += 4;
+    console.log('Cart Quantity:' + cartquantity)};
+    showCart();"
+    >
+      +4
+    </button>
+    <button
+      onclick="
+                  if (cartquantity >= 6){console.log('Cart cant add 5 items anymore')}else{ 
+
+      cartquantity += 5;
+    console.log('Cart Quantity:' + cartquantity)};
+    showCart();"
+    >
+      +5
+    </button>
+    <button
+      onclick="
+                  if (cartquantity <= 0){console.log('Cart cant remove items anymore')}else{ 
+
+      cartquantity --;
+    console.log('Cart Quantity:' + cartquantity)};
+    showCart();"
+    >
+      Remove from cart
+    </button>
+    <button
+      onclick="
+                        if (cartquantity <= 1){console.log('Cart cant remove 2 items anymore')}else{ 
+
+      cartquantity -= 2;
+    console.log('Cart Quantity:' + cartquantity)};
+    showCart();"
+    >
+      -2
+    </button>
+    <button
+      onclick="if (cartquantity <= 2){console.log('Cart cant remove 3 items anymore')}else{ 
+        cartquantity -= 3;
+    console.log('Cart Quantity:' + cartquantity)};
+    showCart();"
+    >
+      -3
+    </button>
+    <button
+      onclick="cartquantity = 0;
+      console.log('Cart was reset');
+    console.log('Cart Quantity:' + cartquantity);
+    showCart()"
+      `
+    >
+      Reset Cart
+    </button>
+    <p class="show-cart">Cart Quantity:</p>
+
+    <script>
+      function showCart() {
+        document.querySelector(
+          ".show-cart"
+        ).innerHTML = `Cart Quantity: ${cartquantity}`;
+        localStorage.setItem("cartquantity", cartquantity);
+      }
+
+      let cartquantity = Number(localStorage.getItem("cartquantity")) || 0;
+      if (cartquantity >= 10) {
+        console.log("Cart is full");
+      }
+      showCart();
+    </script>
+  </body>
+</html>

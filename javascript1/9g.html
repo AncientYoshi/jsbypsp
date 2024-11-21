@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Project</title>
+  </head>
+  <body>
+    <p>Amazon Shipping Calculator</p>
+    <input
+      type="number"
+      placeholder="Cost Of Order"
+      class="take-cost"
+      onkeydown="if (event.key === 'Enter'){
+      CalcCostOfOrder();
+    }"
+    />
+    <button onclick="CalcCostOfOrder()">Calculate</button>
+    <p class="show-cost"></p>
+    <script>
+      function CalcCostOfOrder() {
+        const cost = document.querySelector(".take-cost");
+        let costElement = Number(cost.value) * 100;
+
+        if (costElement < 4000) {
+          costElement = (costElement + 1000) / 100;
+        } else {
+          costElement = costElement / 100;
+        }
+        document.querySelector(".show-cost").innerHTML = `$${costElement}`;
+      }
+    </script>
+  </body>
+</html>

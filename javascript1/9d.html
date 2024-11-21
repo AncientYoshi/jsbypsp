@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input placeholder="Name" class="type" onkeydown="submit(event)" />
+    <button class="submit" onclick="calculate()">submit</button>
+    <p class="show-name"></p>
+    <script>
+      function submit(event) {
+        if (event.key === "Enter") {
+          calculate();
+        }
+      }
+      function calculate() {
+        let name = document.querySelector(".type");
+        const nameElement = name.value;
+        document.querySelector(
+          ".show-name"
+        ).innerHTML = `Your name is ${nameElement}`;
+      }
+    </script>
+  </body>
+</html>
