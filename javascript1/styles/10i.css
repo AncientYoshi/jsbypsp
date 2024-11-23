@@ -1,0 +1,29 @@
+body {
+  font-family: Arial;
+  color: white;
+  background-color: black;
+}
+
+.cal-p {
+  font-size: 40px;
+  margin: 10px;
+}
+
+.tab-p {
+  font-size: 25px;
+  color: white;
+  background-color: rgb(25, 25, 25);
+  border: none;
+  border-radius: 60px;
+  height: 60px;
+  width: 60px;
+  margin-right: 5px;
+}
+
+.clear-btn {
+  font-size: 17px;
+}
+
+.org-btn {
+  background-color: rgb(254, 160, 10);
+}

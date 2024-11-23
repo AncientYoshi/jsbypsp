@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .tab,
+      .tab2,
+      .tab3 {
+        font-family: Arial;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      .is-toggleed {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="tab" onclick="toggleadd('tab')">Gaming</button>
+    <button class="tab2" onclick="toggleadd('tab2')">Music</button>
+    <button class="tab3" onclick="toggleadd('tab3')">Taste</button>
+    <script>
+      function toggleadd(x) {
+        const t = document.querySelector(".tab2");
+        const c = document.querySelector(".tab3");
+        const d = document.querySelector(".tab");
+
+        if (x === "tab") {
+          const y = document.querySelector(`.${x}`);
+          if (y.classList.contains("is-toggleed")) {
+            y.classList.remove("is-toggleed");
+          } else {
+            y.classList.add("is-toggleed");
+            t.classList.remove("is-toggleed");
+            c.classList.remove("is-toggleed");
+          }
+        } else if (x === "tab2") {
+          const y = document.querySelector(`.${x}`);
+          if (y.classList.contains("is-toggleed")) {
+            y.classList.remove("is-toggleed");
+          } else {
+            y.classList.add("is-toggleed");
+            d.classList.remove("is-toggleed");
+            c.classList.remove("is-toggleed");
+          }
+        } else if (x === "tab3") {
+          const y = document.querySelector(`.${x}`);
+          if (y.classList.contains("is-toggleed")) {
+            y.classList.remove("is-toggleed");
+          } else {
+            y.classList.add("is-toggleed");
+            d.classList.remove("is-toggleed");
+            t.classList.remove("is-toggleed");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

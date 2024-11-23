@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Project</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+      .sub-btn {
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        margin-bottom: 30px;
+      }
+      .subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        padding: 10px;
+      }
+      .cal-btn {
+        padding: 12px 15px;
+        background-color: green;
+        color: white;
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      .less-value {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="subscribeYoutube()" class="Subscribe-btn sub-btn">
+      Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input
+      type="number"
+      placeholder="Cost Of Order"
+      class="take-cost cost-input"
+      onkeydown="if (event.key === 'Enter'){
+      CalcCostOfOrder();
+    }"
+    />
+    <button onclick="CalcCostOfOrder()" class="cal-btn">Calculate</button>
+    <p class="show-cost"></p>
+    <script>
+      function CalcCostOfOrder() {
+        const cost = document.querySelector(".take-cost");
+        let costElement = Number(cost.value);
+
+        if (costElement <= 0) {
+          document.querySelector(".show-cost").innerHTML =
+            "Error : cost cannot be less than or equal to $0";
+          document.querySelector(".show-cost").classList.add("less-value");
+        } else if (costElement < 40) {
+          costElement += 10;
+          document.querySelector(".show-cost").innerHTML = `$${costElement}`;
+        } else {
+          document.querySelector(".show-cost").innerHTML = `$${costElement}`;
+        }
+      }
+      function subscribeYoutube() {
+        const js_btn = document.querySelector(".Subscribe-btn");
+        if (js_btn.innerText === "Subscribe") {
+          js_btn.innerHTML = "Subscribed";
+          js_btn.classList.add("subscribed");
+        } else {
+          js_btn.innerHTML = "Subscribe";
+          js_btn.classList.remove("subscribed");
+        }
+      }
+    </script>
+  </body>
+</html>

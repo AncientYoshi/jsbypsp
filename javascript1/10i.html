@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles/10i.css" />
+  </head>
+  <body>
+    <p class="cal-p">Calculator</p>
+    <p class="cal-p">Calculator</p>
+    <p>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation('1'));"
+      >
+        1
+      </button>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation('2'));"
+      >
+        2
+      </button>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation('3'));"
+      >
+        3
+      </button>
+      <button
+        class="tab-p org-btn"
+        onclick="
+      console.log(calculation = updatecalculation(' + '));"
+      >
+        +
+      </button>
+    </p>
+    <p>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation('4'));"
+      >
+        4
+      </button>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation('5'));"
+      >
+        5
+      </button>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation('6'));"
+      >
+        6
+      </button>
+      <button
+        class="tab-p org-btn"
+        onclick="
+      console.log(calculation = updatecalculation(' - '));"
+      >
+        -
+      </button>
+    </p>
+    <p>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation('7'));"
+      >
+        7
+      </button>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation('8'));"
+      >
+        8
+      </button>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation('9'));"
+      >
+        9
+      </button>
+      <button
+        class="tab-p org-btn"
+        onclick="
+      console.log(calculation = updatecalculation(' * '));"
+      >
+        *
+      </button>
+    </p>
+    <p>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation(' 0 '));"
+      >
+        0
+      </button>
+      <button
+        class="tab-p"
+        onclick="
+      console.log(calculation = updatecalculation('.'));"
+      >
+        .
+      </button>
+      <button
+        class="tab-p"
+        onclick="calculation = eval(calculation);
+      console.log(calculation);
+      savecalculation();"
+      >
+        =
+      </button>
+      <button
+        class="tab-p org-btn"
+        onclick="
+      console.log(calculation = updatecalculation(' / '));"
+      >
+        /
+      </button>
+    </p>
+    <p>
+      <button
+        class="tab-p clear-btn"
+        onclick="calculation = '';
+      console.log('cleared');
+      savecalculation();"
+      >
+        Clear
+      </button>
+    </p>
+
+    <script src="js/10i.js"></script>
+  </body>
+</html>
