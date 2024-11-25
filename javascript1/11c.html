@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function arraySwap(array) {
+        let array2 = [];
+        for (let i = 1; i <= array.length; i++) {
+          const c = array[array.length - i];
+          array2.push(c);
+        }
+        console.log(array2);
+      }
+      arraySwap([1, 20, 22, 24, 5]);
+      arraySwap(["hi", "hello", "good"]);
+      /*let array2 = [];
+      for (let i = 1; i <= array.length; i++) {
+        const c = array[array.length - i];
+        array2.push(c);
+      }
+      console.log(array2);*/
+    </script>
+  </body>
+</html>

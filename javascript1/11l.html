@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      nums = [1, -3, 5];
+
+      function minMax(nums) {
+        const minMaxobj = {
+          min: null,
+          max: null,
+        };
+
+        for (let i = 0; i < nums.length; i++) {
+          let value = nums[i];
+
+          if (minMaxobj.min === null || minMaxobj.min > value) {
+            minMaxobj.min = value;
+          }
+          if (minMaxobj.max === null || minMaxobj.max < value) {
+            minMaxobj.max = value;
+          }
+        }
+        console.log(minMaxobj);
+      }
+
+      minMax(nums);
+      minMax([-2, 3, -5, 7, 10]);
+      minMax([3]);
+      minMax([]);
+      console.log([]);
+    </script>
+  </body>
+</html>
