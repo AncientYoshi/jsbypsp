@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function findiIndex(array, word) {
+        let value1 = "";
+        for (let i = 0; i < array.length; i++) {
+          const value = array[i];
+          if (value === word) {
+            value1 = i;
+            break;
+          } else {
+            continue;
+          }
+        }
+        value1 === "" ? console.log(-1) : console.log(value1);
+      }
+      array = ["hello", "world", "search", "good", "search"];
+      findiIndex(["green", "red", "blue", "red"], "red");
+      findiIndex(["green", "red", "blue", "red"], "yellow");
+
+      function uniqueArray(array) {
+        let uniqueObject = {};
+        let array2 = [];
+        //let array3 = [];
+        for (let i = 0; i < array.length; i++) {
+          const value = array[i];
+          if (uniqueObject[value]) {
+            continue;
+          } else {
+            uniqueObject[value] = 1;
+            array2.push(value);
+          }
+        }
+        //console.log(array3);
+        console.log(array2);
+      }
+
+      uniqueArray(["green", "red", "blue", "red"]);
+      uniqueArray(["red", "green", "green", "red"]);
+    </script>
+  </body>
+</html>

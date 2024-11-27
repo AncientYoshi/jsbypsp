@@ -9,11 +9,24 @@
     <script>
       array = ["apple", "grape", "apple", "apple"];
 
-      function countWords(array) {
+      function lastindex(array) {
         obj = {};
         for (let i = 0; i < array.length; i++) {
           let element = array[i];
           obj[element] = i;
+        }
+        console.log(obj);
+      }
+
+      function countWords(array) {
+        obj = {};
+        for (let i = 0; i < array.length; i++) {
+          let element = array[i];
+          if (obj[element]) {
+            obj[element]++;
+          } else {
+            obj[element] = 1;
+          }
         }
         console.log(obj);
       }

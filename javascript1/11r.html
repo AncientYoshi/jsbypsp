@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      food = ["egg", "apple", "egg", "egg", "ham"];
+      function removeEgg(food) {
+        array = food.slice();
+        array = array.reverse();
+        array2 = [];
+        let c = 0;
+        for (let i = 0; i < array.length; i++) {
+          const item = array[i];
+          if (c === 2) {
+            if (item === "egg") {
+              array2.push(item);
+            }
+          } else {
+            if (item === "egg") {
+              c++;
+              continue;
+            }
+          }
+          if (item != "egg") {
+            array2.push(item);
+          }
+        }
+        return array2.reverse();
+      }
+      console.log(removeEgg(food));
+      console.log(food);
+    </script>
+  </body>
+</html>
