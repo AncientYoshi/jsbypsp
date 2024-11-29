@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+  </head>
+  <body>
+    <button
+      onclick="messagesAdd(); 
+"
+    >
+      Add
+    </button>
+    <button
+      onclick="messagesRemove() 
+"
+    >
+      Remove
+    </button>
+    <script>
+      function messagesAdd() {
+        messages++;
+
+        intervalGet(messages);
+        clearInterval(intervalId);
+      }
+      function messagesRemove() {
+        messages--;
+        clearInterval(intervalId);
+
+        intervalGet(messages);
+      }
+      let messages = 0;
+      //intervalGet(messages);
+
+      /*intervalId = setInterval(function () {
+        document.title = `(${messages}) New messages`;
+      }, 1000);
+      */
+      function intervalGet(messages) {
+        if (messages > 0) {
+          const intervalId = setInterval(function () {
+            document.title = `(${messages}) New messages`;
+          }, 1000);
+        } else {
+          clearInterval(intervalId);
+          //clearInterval(intervalId2);
+        }
+      }
+
+      /*setInterval(function () {
+        document.title = "App";
+      }, 2000);*/
+    </script>
+  </body>
+</html>

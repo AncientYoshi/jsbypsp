@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="addToCart()">Add to cart</button>
+    <p class="add-button"></p>
+    <script>
+      let clickAgain = false;
+      let timeoutID;
+      let timeoutID2;
+      function addToCart() {
+        document.querySelector(".add-button").innerHTML = "Added";
+
+        if (!clickAgain) {
+          timeoutID = setTimeout(function () {
+            document.querySelector(".add-button").innerHTML = "";
+          }, 3000);
+          clickAgain = true;
+          clearTimeout(timeoutID2);
+        } else {
+          clearTimeout(timeoutID);
+          clickAgain = false;
+          timeoutID2 = setTimeout(function () {
+            document.querySelector(".add-button").innerHTML = "";
+          }, 3000);
+        }
+      }
+    </script>
+  </body>
+</html>
