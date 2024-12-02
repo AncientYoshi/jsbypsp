@@ -6,12 +6,15 @@
     <title>Document</title>
   </head>
   <body>
-    <button class="Start-stop" onclick="startStop()">Start</button>
+    <button class="Start-stop set">Start</button>
     <script>
+      document.querySelector(".set").addEventListener("click", () => {
+        startStop();
+      });
       function startStop() {
         document.querySelector(".Start-stop").innerHTML = "Loading...";
 
-        setTimeout(function () {
+        setTimeout(() => {
           document.querySelector(".Start-stop").innerHTML = "Finished!";
         }, 1000);
       }

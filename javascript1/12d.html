@@ -6,9 +6,12 @@
     <title>Document</title>
   </head>
   <body>
-    <button onclick="addToCart()">Add to cart</button>
+    <button class="add" onclick="addToCart()">Add to cart</button>
     <p class="add-button"></p>
     <script>
+      document
+        .querySelector(".add")
+        .addEventListener("click", () => addToCart());
       let clickAgain = false;
       let timeoutID;
       let timeoutID2;
@@ -16,7 +19,7 @@
         document.querySelector(".add-button").innerHTML = "Added";
 
         if (!clickAgain) {
-          timeoutID = setTimeout(function () {
+          timeoutID = setTimeout(() => {
             document.querySelector(".add-button").innerHTML = "";
           }, 3000);
           clickAgain = true;
@@ -24,7 +27,7 @@
         } else {
           clearTimeout(timeoutID);
           clickAgain = false;
-          timeoutID2 = setTimeout(function () {
+          timeoutID2 = setTimeout(() => {
             document.querySelector(".add-button").innerHTML = "";
           }, 3000);
         }

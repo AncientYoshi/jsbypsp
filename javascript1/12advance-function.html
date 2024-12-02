@@ -6,7 +6,29 @@
     <title>Document</title>
   </head>
   <body>
+    <button onclick="" class="btn">Click</button>
     <script>
+      console.log(
+        [1, 2, -3].filter((value, index) => {
+          return value >= 0;
+        })
+      );
+      console.log(
+        [1, 2, 4].map((value, index) => {
+          return value * 2;
+        })
+      );
+      console.log([1, 2, 4].map((value) => value * 2));
+
+      /*const documentElement = document.querySelector(".btn");
+      const elementListener = () => console.log("element");
+
+      documentElement.addEventListener("click", elementListener);
+      documentElement.addEventListener("click", () =>
+        console.log("Hey add event listener again!")
+      );
+      documentElement.removeEventListener("click", elementListener);
+
       /*let obj = {
         name1: "moon",
         fun: function () {
@@ -28,9 +50,27 @@
       setInterval(() => {
         console.log("Hello every3seconds");
       }, 3000);*/
+      /*
       ["hello", "hi", "hajimemashite"].forEach(function (name, i) {
         console.log(name + ": " + i);
       });
+      const oneline = (x) => x * 2 * 1000;
+      console.log(oneline(399));
+      const obj = {
+        /**
+         *
+         */
+      /**
+         *
+         
+        sendy() {
+
+        }
+        jdd() {
+
+        }
+      }
+      */
     </script>
   </body>
 </html>

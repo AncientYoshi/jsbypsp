@@ -17,11 +17,17 @@ function rendorToDoList() {
   let todoHTMLlist = "";
   array1.forEach(function (todoHTML, i) {
     const html = `<div>${todoHTML.name}</div><div> ${todoHTML.date}</div>
-    <button class='delete-input' onclick='array1.splice(${i},1); rendorToDoList()'>
+    <button class='delete-input js-delete' >
     Delete
     </button>
     `;
     todoHTMLlist += html;
+  });
+  document.querySelectorAll(".js-delete").forEach((deleteButton, i) => {
+    deleteButton.addEventListener("click", () => {
+      array1.splice(i, 1);
+      rendorToDoList();
+    });
   });
   /*for (let i = 0; i < array1.length; i++) {
     const todoHTML = array1[i];
@@ -35,6 +41,9 @@ function rendorToDoList() {
   console.log(todoHTMLlist);
   document.querySelector(".show-rendor").innerHTML = todoHTMLlist;
 }
+document.querySelector(".js-add").addEventListener("click", () => {
+  getToDoinput();
+});
 
 function getToDoinput() {
   const name = document.querySelector(".get-input");

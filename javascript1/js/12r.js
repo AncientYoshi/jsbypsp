@@ -18,6 +18,36 @@ document.querySelector(".js-scissor").addEventListener("click", () => {
   calculateResult("scissor");
   updateResult("scissor");
 });
+const html2 = `<div class="confirmation">
+    Are you sure want to reset the score?
+    <button class='yes-btn'>Yes</button>
+    <button class='no-btn'>No</button>
+    </div>
+  `;
+const selectorElement = document.querySelector(".setted-btn");
+
+document.querySelector(".reset-move").addEventListener("click", () => {
+  resetScoreElement();
+});
+
+/*document.querySelector(".yes-btn").addEventListener("click", () => {
+  resetScoreElement();
+});*/
+
+function resetScoreElement() {
+  selectorElement.innerHTML = html2;
+  document.querySelector(".yes-btn").addEventListener("click", () => {
+    (show.win = 0),
+      (show.loss = 0),
+      (show.tie = 0),
+      localStorage.removeItem("show");
+    updateScoreElement();
+    selectorElement.innerHTML = "";
+  });
+  document.querySelector(".no-btn").addEventListener("click", () => {
+    selectorElement.innerHTML = "";
+  });
+}
 
 document.body.addEventListener("keydown", (event) => {
   if (event.key === "r") {
@@ -26,6 +56,10 @@ document.body.addEventListener("keydown", (event) => {
     calculateResult("paper");
   } else if (event.key === "s") {
     calculateResult("scissor");
+  } else if (event.key === "a") {
+    autoPlay();
+  } else if (event.key === "Backspace") {
+    resetScoreElement();
   }
 });
 
@@ -33,15 +67,22 @@ updateScoreElement();
 updateResult();
 let autoPlaying = false;
 let intervalId;
+
+document.querySelector(".auto-play").addEventListener("click", () => {
+  autoPlay();
+  //document.querySelector(".auto-play").innerHTML = "Stop playing";
+});
 function autoPlay() {
   if (!autoPlaying) {
     intervalId = setInterval(() => {
       const playerMove = computeNo();
       calculateResult(playerMove);
     }, 1000);
+    document.querySelector(".auto-play").innerHTML = "Stop playing";
     autoPlaying = true;
   } else {
     clearInterval(intervalId);
+    document.querySelector(".auto-play").innerHTML = "Auto Play";
     autoPlaying = false;
   }
 }
@@ -115,7 +156,7 @@ function updateResult(cal) {
   document.querySelector(
     ".js-btn-result"
   ).innerHTML = `      You chose <img src="images/${cal}-emoji.png" alt="" class="move you-pick" />
-`;
+  `;
 }
 function updatemove(result) {
   document.querySelector(".js-btn-move").innerHTML = result;
@@ -124,5 +165,5 @@ function updateResult2(result) {
   document.querySelector(
     ".js-btn-result2"
   ).innerHTML = `      Computer chose <img src="images/${result}-emoji.png" alt="" class="move" />
-`;
+  `;
 }
