@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="show"></p>
+    <p class="show1"></p>
+    <p class="show2"></p>
+
+    <script type="module">
+      import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
+      const today = dayjs();
+      const todayAfter5Days = today.add(5, "days");
+      const todayAfter1Month = today.add(1, "months");
+      const todayBefore1Month = today.subtract(1, "months");
+      const html = todayAfter5Days.format("dddd");
+      const html1 = todayAfter1Month.format("dddd");
+      const html2 = todayBefore1Month.format("dddd");
+      document.querySelector(".show").innerHTML = html;
+      document.querySelector(".show1").innerHTML = html1;
+      document.querySelector(".show2").innerHTML = html2;
+    </script>
+  </body>
+</html>
